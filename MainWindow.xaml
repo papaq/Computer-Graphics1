@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="Get A" Height="350" Width="525" MinWidth="720" MinHeight="640" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="509"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="gridButtonBox" Margin="10,0,10,10" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="116*"/>
+                <ColumnDefinition Width="116*"/>
+                <ColumnDefinition Width="207*"/>
+                <ColumnDefinition Width="82*"/>
+                <ColumnDefinition Width="87"/>
+                <ColumnDefinition Width="86"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="buttonDraw" Content="DRAW" HorizontalAlignment="Center" Margin="7,29,6,29" Width="74" Click="buttonDraw_Click" FontSize="16" Grid.Column="4"/>
+            <Button x:Name="buttonClear" Content="CLEAR" HorizontalAlignment="Center" Margin="8,29,2,29" Width="76" FontSize="16" Grid.Column="5" Click="buttonClear_Click"/>
+            <ComboBox x:Name="comboLine" Margin="0,29" Width="96" SelectedIndex="0" FontSize="16" HorizontalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" SelectionChanged="comboLine_SelectionChanged">
+                <Button Content="Line" BorderBrush="{x:Null}" Background="{x:Null}" Focusable="False" IsHitTestVisible="False" IsTabStop="False"/>
+                <Button Content="Circle" BorderBrush="{x:Null}" Background="{x:Null}" Focusable="False" IsHitTestVisible="False" IsTabStop="False"/>
+                <Button Content="Ellipse" BorderBrush="{x:Null}" Background="{x:Null}" Focusable="False" IsHitTestVisible="False" IsTabStop="False"/>
+                <Button Content="Initials" BorderBrush="{x:Null}" Background="{x:Null}" Focusable="False" IsHitTestVisible="False" IsTabStop="False"/>
+            </ComboBox>
+            <ComboBox x:Name="comboAlgorithm" HorizontalAlignment="Center" Margin="0,29" Width="112" Background="{x:Null}" BorderBrush="{x:Null}" SelectedIndex="0" FontSize="16" Grid.Column="1">
+                <Button Content="DDA" BorderBrush="{x:Null}" Background="{x:Null}" Focusable="False" IsHitTestVisible="False" IsTabStop="False"/>
+                <Button BorderBrush="{x:Null}" Background="{x:Null}" Content="Bresenham" Focusable="False" IsTabStop="False" IsHitTestVisible="False"/>
+                <Button Content="Wu" BorderBrush="{x:Null}" Background="{x:Null}" Focusable="False" IsHitTestVisible="False" IsTabStop="False"/>
+            </ComboBox>
+            <Grid x:Name="gridR" Grid.Column="2" Margin="12,0,11,0" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBox HorizontalAlignment="Left" Height="24" Margin="28,12,0,0" TextWrapping="Wrap" Text="R1" VerticalAlignment="Top" Width="63" BorderBrush="{x:Null}" FontSize="17" FontWeight="Bold" HorizontalContentAlignment="Right" IsTabStop="False" IsHitTestVisible="False" Focusable="False" AllowDrop="False"/>
+                <TextBox HorizontalAlignment="Left" Height="24" Margin="28,11,0,0" TextWrapping="Wrap" Text="R2" VerticalAlignment="Top" Width="63" BorderBrush="{x:Null}" FontSize="17" FontWeight="Bold" HorizontalContentAlignment="Right" Grid.Row="1" IsTabStop="False" IsHitTestVisible="False" Focusable="False" AllowDrop="False"/>
+                <TextBox x:Name="textBoxR1" HorizontalAlignment="Right" Height="24" Margin="0,12,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="63" BorderBrush="Black" FontSize="17" FontWeight="Bold" IsHitTestVisible="True" AllowDrop="False"/>
+                <TextBox x:Name="textBoxR2" HorizontalAlignment="Right" Height="24" Margin="0,11,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="63" BorderBrush="Black" FontSize="17" FontWeight="Bold" Grid.Row="1" IsHitTestVisible="True" AllowDrop="False" IsEnabled="False"/>
+            </Grid>
+        </Grid>
+        <Image x:Name="image" Margin="10" Height="489" Width="690" MouseLeftButtonUp="image_MouseLeftButtonUp"/>
+
+    </Grid>
+</Window>
